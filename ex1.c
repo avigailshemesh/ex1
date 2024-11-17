@@ -18,7 +18,7 @@ int main() {
   scanf("%i",&number1);
   printf("Please enter a position:\n");
   scanf("%i",&position1);
-  int bitInPosition= (number1 >> position1) & 1;
+  int bitInPosition= (number1 >> position1) & 1; //To find the bit at the requested position.
   printf("The bit in position %i of number %i is: %i\n",position1, number1, bitInPosition);
 
   // Set bit
@@ -33,10 +33,10 @@ int main() {
   scanf("%i",&number2);
   printf("Please enter a position:\n");
   scanf("%i",&position2);
-  int set1 = number2 | (1<<position2);
-  int set0 = number2 & ~(1<<position2);
-  printf("Number with bit %i set to 1: %i\n", position2, set1);
-  printf("Number with bit %i set to 0: %i\n", position2, set0);
+  int setOn = number2 | (1<<position2); //To get the number when the bit at the requested position is on.
+  int setOff = number2 & ~(1<<position2); //To get the number when the bit at the requested position is off.
+  printf("Number with bit %i set to 1: %i\n", position2, setOn);
+  printf("Number with bit %i set to 0: %i\n", position2, setOff);
 
   // Toggle bit
   printf("\nToggle bit:\n");
@@ -48,7 +48,7 @@ int main() {
   scanf("%i",&number3);
   printf("Please enter a position:\n");
   scanf("%i",&position3);
-  int toggle= number3 ^ (1<<position3);
+  int toggle= number3 ^ (1<<position3); //To toggle the bit at the requested position.
   printf("Number with bit %i toggled: %i\n", position3, toggle);
 
   // Even - Odd
@@ -58,7 +58,7 @@ int main() {
   int number4;
   printf("Please enter a number:\n");
   scanf("%i",&number4);
-  int isOdd = ~(number4) & 0x1;
+  int isOdd = ~(number4) & 0x1; //To check if the number is odd or even.
   printf("%i\n", isOdd);
 
   // 3, 5, 7, 11
@@ -66,12 +66,12 @@ int main() {
   /* Scan two integers in octal base
   sum them up and print the result in hexadecimal base
   Print only 4 bits, in positions: 3,5,7,11 in the result. */
-  int num1, num2;
+  int number1Task5, number2Task5;
   printf("Please enter the first number (octal):\n");
-  scanf("%o",&num1);
+  scanf("%o",&number1Task5);
   printf("Please enter the second number (octal):\n");
-  scanf("%o",&num2);
-  int hexSum = num1 + num2;
+  scanf("%o",&number2Task5);
+  int hexSum = number1Task5 + number2Task5; //To sum the requested numbers
   printf("The sum in hexadecimal: %X\n", hexSum);
   printf("The 3,5,7,11 bits are: %i%i%i%i\n", ((hexSum >> 3) & 1), ((hexSum >> 5) & 1), ((hexSum >> 7) & 1), ((hexSum >> 11) & 1));
   printf("Bye!\n");
